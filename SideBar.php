@@ -12,20 +12,28 @@
         <div class="offcanvas-body">
         <ul class="navbar-nav nav-pills flex-column justify-content-end flex-grow-1">
         <li class="nav-item">
-            <a class="nav-link active link-light" aria-current="page" href="index.php"> <i class="bi bi-house"></i> Home</a>
+            <a class="nav-link ps-2 <?php echo ((isset($_GET['x']) && $_GET['x']== 'home')  || !isset($_GET['x']))  ? 'active link-light' : 'link-dark' ;?>" aria-current="page" href="home"> <i class="bi bi-house"></i> Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="order.php"> <i class="bi bi-basket2-fill"></i> Pesanan</a>
+            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x']== 'menu') ? 'active link-light' : 'link-dark' ;?>" href="menu"> <i class="bi bi-menu-down"></i> Daftar Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="costumer.php"> <i class="bi bi-people-fill"></i> Pelanggan</a>
+            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x']== 'katmenu') ? 'active link-light' : 'link-dark' ;?>" href="katmenu"> <i class="bi bi-tags"></i> kategori Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="product.php"><i class="bi bi-card-checklist"></i> Produk</a>
+            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x']== 'order') ? 'active link-light' : 'link-dark' ;?>" href="order"> <i class="bi bi-basket2-fill"></i> Pesanan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="report.php"><i class="bi bi-clipboard2-fill"></i> Laporan</a>
+            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x']== 'Pelanggan') ? 'active link-light' : 'link-dark' ;?>" href="Pelanggan"> <i class="bi bi-people-fill"></i> Pelanggan</a>
           </li>
+          <?php if($hasil[['level']==1]){?>
+          <li class="nav-item">
+            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x']== 'user') ? 'active link-light' : 'link-dark' ;?>" href="user"><i class="bi bi-card-checklist"></i> User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x']== 'Laporan') ? 'active link-light' : 'link-dark' ;?>" href="Laporan"><i class="bi bi-clipboard2-fill"></i> Laporan</a>
+          </li>
+          <?php } ?>
         </ul>
       </div>
     </div>
